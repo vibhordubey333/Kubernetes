@@ -1,26 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: html-webapp #Name of deployment
-  labels:
-    name: html-webapp
-    app: demo-web-page
+  name: demo-web-page #Name of deployment
 spec:
   replicas: 2 # Instances of our pod. kubectl get all
   selector:
     matchLabels:
-      name: index-web-pod
-      app: index-web-page
+      app:  demo-web-page
   template:
     metadata:
-      name: index-web-pod
       labels:
-        name: index-web-pod
         app: demo-web-page
     spec:
       containers:
       - name: index-web-container01
-        image: sumuduliyan/index-web
+        image: vibhordubey/html-webapp:latest
+        imagePullPolicy: IfNotPresent
         resources:
           requests:
             memory: "64Mi"
@@ -30,3 +25,4 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
+      restartPolicy: Always
