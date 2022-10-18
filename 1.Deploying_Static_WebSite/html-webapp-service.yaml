@@ -9,7 +9,7 @@ spec:
  ports:
   - port: 80
     targetPort: 80
-    nodePort: 80
+    nodePort: 32765
  selector:
     app: demo-web-page
 
