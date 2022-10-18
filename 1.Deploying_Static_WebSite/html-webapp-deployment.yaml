@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-webapp #Name of deployment
+  labels:
+    name: html-webapp
+    app: demo-web-page
+spec:
+  replicas: 2 # Instances of our pod. kubectl get all
+  selector:
+    matchLabels:
+      name: index-web-pod
+      app: index-web-page
+  template:
+    metadata:
+      name: index-web-pod
+      labels:
+        name: index-web-pod
+        app: demo-web-page
+    spec:
+      containers:
+      - name: index-web-container01
+        image: sumuduliyan/index-web
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
