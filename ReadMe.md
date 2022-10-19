@@ -1,6 +1,20 @@
 <details>
 <summary>Kubernetes Concepts </summary>
+
+<details>
+<summary>Interview Questions</summary>
+1. How many ways we can access our microservice deployed using k8's ?<br/>
+
+   A. Inside the pod using `exec` command
+   B. Using pod IP `kubectl get po -n work -o wide`
+   C. Using services like NodePort,ClusterIP,LoadBalancer and ExternalName
+
+2. 
+
 </details>
+
+</details>
+
 
 <details> 
 <summary> Cheat Sheet</summary>
@@ -13,7 +27,7 @@
 - Edit the deployment of running pod `kubectl edit deploy pod_name_avoid_hexa_decimal_value -n namespace`
 - Delete deployment `kubectl delete deployment deployment_name -n namespace`
 - Delete service `kubectl delete svc service_name -n namespace`
-
+- Access pod `kubectl exec -it pod_name -n namespace -- sh`
 </details>
 
  
