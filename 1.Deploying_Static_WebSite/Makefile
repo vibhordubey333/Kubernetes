@@ -20,4 +20,5 @@ cleanSvcDep:
 podStatus:
 	sudo kubectl get po -n work -o wide
 
-
+clusterIPDep:
+	sudo kubectl apply -f html-webapp-ClusterIP-service.yaml -n work
