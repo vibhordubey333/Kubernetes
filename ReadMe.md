@@ -28,6 +28,10 @@
 - Delete deployment `kubectl delete deployment deployment_name -n namespace`
 - Delete service `kubectl delete svc service_name -n namespace`
 - Access pod `kubectl exec -it pod_name -n namespace -- sh`
+- To preview object without actually sending it to API server `kubectl apply -f file_name --dry-run=client`
+- To find IP of `headless service`. 
+   - Enter into pod `kubectl exec -it pod_name -n namespace -- sh`
+   - Fire `nslookup serviceName.namespace.svc.cluster.local` 
 </details>
 
  
