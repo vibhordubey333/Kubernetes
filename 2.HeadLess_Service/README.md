@@ -27,6 +27,14 @@ spec:
       targetPort: 3000 
 ```
 
+## Run
+
+1. Build Dockerimage
+2. Deploy pod.
+3. Deploy normal service and headless service.
+4. After deploying headless service, enter into pod `kubectl exec -it pod_name -n work -- sh` then do `nslookup servicename`. It will return the IP address.
+5. Fire `curl http://ip_address_from_above_step:80`
+
 <details>
 <summary>References</summary>
 A. https://medium.com/swlh/discovering-running-pods-by-using-dns-and-headless-services-in-kubernetes-7002a50747f4 </br>
