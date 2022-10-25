@@ -1,6 +1,42 @@
 <details>
-<summary>Kubernetes Concepts </summary>
+<summary>Kubernetes Concepts </summary> <br/>
+1. Kubernetes Terminologies
 
+**Node** A Kubernetes node is a small collection of resources that support one or more containers. Each node contains Docker, kube-proxy and kubelet -- services that help create the runtime environment and support Kubernetes pods.
+A Node Controller manages all aspects of the node throughout its lifecycle. It maintains a list of nodes and available machines and resources, and it can delete unhealthy nodes or remove pods from unavailable nodes. You can use the command-line kubectl to run commands against the node.
+
+**Cluster:** A cluster is a group of servers or computing resources that behave as a single system. For the purposes of Kubernetes, a cluster usually means the set of nodes you use to manage and run your containerized applications.
+
+A Kubernetes cluster is made up of one primary node and a number of secondary nodes. The primary node controls the state of the entire cluster. It also issues all task assignments for the cluster, including scheduling, maintenance and updates.
+
+**Kubelet:** Kubelet is the agent that handles Kubernetes pods for each Kubernetes node. It registers nodes with the API server, and it ensures all containers on a pod are running and healthy. It reports to the primary node regarding the health of its host, and it conveys information to and from the API server. When the control plane requires something from a node, kubelet executes the action.
+
+**Kube-proxy.** Kube-proxy facilitates networking services for a Kubernetes environment. It handles networking communications both inside and outside of a Kubernetes cluster, and maintains network rules on nodes. It uses your OS's packet filtering layer when available, and when it can't use the packet filtering layer, it forwards network traffic itself.
+
+**Kubernetes scheduler** The Kubernetes scheduler controls performance, capacity and availability of resources and containers throughout a given Kubernetes environment. It matches each pod you create to a suitable set of resources on a node and distributes copies of pods across different nodes to increase availability. It upholds affinity and anti-affinity rules and quality of service settings.
+
+You can configure Kubernetes scheduler in one of two ways. The PriorityFunction policy directs the scheduler to rank machines based on best fit for a specific node, whereas the FitPredicate policy follows required rules.
+
+**Namespaces:** In Kubernetes, the namespaces is effectively your working area. It's like a project in GCP or a similar thing in AWS.
+
+**Etcd:** Etcd is the primary data store that Kubernetes uses. It contains all configuration data and information about the state of a given cluster, and it stores and replicates all cluster states. You can deploy etcd as either pods on the primary node or as an external cluster.
+
+Etcd is defined as distributed, reliable key-value store for the most critical data of a distributed system.
+
+**Pods:** A pod is effectively a unit of work. It is a way to describe a series of containers, the volumes they might share, and interconnections that those containers within the pod may need. You can have a pod that has a single container in it (or more than one container). Pods are flexible, too: Update one and it becomes version two, and version one is taken out, giving you a rolling update. As Jason spells out, "It gives us a way to say, 'I always want to have three and still be able to migrate an application live from one version to another version without having downtime.'
+
+**Service:** Kubernetes "has a concept of a service," Jason says. "It can be thought of as like a load balancer for pods. It knows which pods are alive, healthy, and ready to respond so that when we try to access whatever pod we want to get to instead of to connect to the deployment and getting the one we get, and then always asking that pod for work."
+
+**Ingress:** This works with the service to make sure everything ends up in the right place. Ingress can also provide load balancing. 
+
+Ingress is not a load balancer, but performs load balancing functions for a Kubernetes environment. It controls traffic to and from services, as well as external access to services. It performs load balancing tasks by setting up an external load balancer and directs traffic to that service based on a set of rules. This enables you to use multiple back-end services via the same IP address.
+
+**Volume:** A Kubernetes volume is a directory containing all data accessible for containers in a given pod. Volumes provide a method for connecting containers and pods -- which only exist as long as you use them -- to a more permanent set of data stored elsewhere. When you delete a pod, the volume associated with it is destroyed as well. However, the data within that volume outlasts the containers or pods that use it.
+Kubernetes supports about 20 different varieties of volumes, including emptyDir volumes, local volumes and specialty platform-specific volumes.
+
+**ConfigMaps:** This is an API object for storing information in key-value pairs. "A ConfigMap is very useful for doing things like pre-stashing environment variables or files that can actually be mounted directly into pods without actually having to have an actual file system somewhere," Jason says, adding that they're not meant for confidential data.
+
+**Secrets:** Secrets are an object and a place to store confidential information as the name implies.
 <details>
 <summary>Interview Questions</summary>
 1. How many ways we can access our microservice deployed using k8's ?<br/>
