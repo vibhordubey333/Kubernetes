@@ -1,15 +1,20 @@
 <details>
 <summary>Kubernetes Concepts </summary> <br/>
-1. Kubernetes Terminologies
 
-**Node** A Kubernetes node is a small collection of resources that support one or more containers. Each node contains Docker, kube-proxy and kubelet -- services that help create the runtime environment and support Kubernetes pods.
+### **1. Kubernetes Terminologies**
+
+**Control Plane:** The collection of processes that control kubernetes nodes. This is where all task assignment originates.
+
+**Node:** A Kubernetes node is a small collection of resources that support one or more containers. Each node contains Docker, kube-proxy and kubelet -- services that help create the runtime environment and support Kubernetes pods.
 A Node Controller manages all aspects of the node throughout its lifecycle. It maintains a list of nodes and available machines and resources, and it can delete unhealthy nodes or remove pods from unavailable nodes. You can use the command-line kubectl to run commands against the node.
 
 **Cluster:** A cluster is a group of servers or computing resources that behave as a single system. For the purposes of Kubernetes, a cluster usually means the set of nodes you use to manage and run your containerized applications.
 
 A Kubernetes cluster is made up of one primary node and a number of secondary nodes. The primary node controls the state of the entire cluster. It also issues all task assignments for the cluster, including scheduling, maintenance and updates.
 
-**Kubelet:** Kubelet is the agent that handles Kubernetes pods for each Kubernetes node. It registers nodes with the API server, and it ensures all containers on a pod are running and healthy. It reports to the primary node regarding the health of its host, and it conveys information to and from the API server. When the control plane requires something from a node, kubelet executes the action.
+**Kubelet:** *_**This service runs on nodes, reads the container manifests, and ensures the defined containers are started and running.**_*Kubelet is the agent that handles Kubernetes pods for each Kubernetes node. It registers nodes with the API server, and it ensures all containers on a pod are running and healthy. It reports to the primary node regarding the health of its host, and it conveys information to and from the API server. When the control plane requires something from a node, kubelet executes the action.
+
+**Kubectl** The command line configuration tool for kubernetes.
 
 **Kube-proxy.** Kube-proxy facilitates networking services for a Kubernetes environment. It handles networking communications both inside and outside of a Kubernetes cluster, and maintains network rules on nodes. It uses your OS's packet filtering layer when available, and when it can't use the packet filtering layer, it forwards network traffic itself.
 
@@ -25,7 +30,7 @@ Etcd is defined as distributed, reliable key-value store for the most critical d
 
 **Pods:** A pod is effectively a unit of work. It is a way to describe a series of containers, the volumes they might share, and interconnections that those containers within the pod may need. You can have a pod that has a single container in it (or more than one container). Pods are flexible, too: Update one and it becomes version two, and version one is taken out, giving you a rolling update. As Jason spells out, "It gives us a way to say, 'I always want to have three and still be able to migrate an application live from one version to another version without having downtime.'
 
-**Service:** Kubernetes "has a concept of a service," Jason says. "It can be thought of as like a load balancer for pods. It knows which pods are alive, healthy, and ready to respond so that when we try to access whatever pod we want to get to instead of to connect to the deployment and getting the one we get, and then always asking that pod for work."
+**Service:** It can be thought of as like a load balancer for pods. It knows which pods are alive, healthy, and ready to respond so that when we try to access whatever pod we want to get to instead of to connect to the deployment and getting the one we get, and then always asking that pod for work."
 
 **Ingress:** This works with the service to make sure everything ends up in the right place. Ingress can also provide load balancing. 
 
@@ -37,6 +42,13 @@ Kubernetes supports about 20 different varieties of volumes, including emptyDir 
 **ConfigMaps:** This is an API object for storing information in key-value pairs. "A ConfigMap is very useful for doing things like pre-stashing environment variables or files that can actually be mounted directly into pods without actually having to have an actual file system somewhere," Jason says, adding that they're not meant for confidential data.
 
 **Secrets:** Secrets are an object and a place to store confidential information as the name implies.
+
+## **2. Kubernetes Architecture ?**
+
+## 3. **What about Docker?** <br/>
+Docker can be used as a container runtime that Kubernetes orchestrates. When Kubernetes schedules a pod to a node, the kubelet on that node will instruct Docker to launch the specified containers.
+The kubelet then continuously collects the status of those containers from Docker and aggregates that information in the control plane. Docker pulls containers onto that node and starts and stops those containers.
+The difference when using Kubernetes with Docker is that an automated system asks Docker to do those things instead of the admin doing so manually on all nodes for all containers.
 <details>
 <summary>Interview Questions</summary>
 1. How many ways we can access our microservice deployed using k8's ?<br/>

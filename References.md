@@ -11,4 +11,4 @@
 6. https://www.techtarget.com/searchdatacenter/feature/Common-Kubernetes-terminology-you-should-know
 7. https://betterprogramming.pub/a-closer-look-at-etcd-the-brain-of-a-kubernetes-cluster-788c8ea759a5
 8. https://kubernetes.io/docs/concepts/services-networking/ingress/
-9. 
+9. https://www.redhat.com/en/topics/containers/what-is-kubernetes
