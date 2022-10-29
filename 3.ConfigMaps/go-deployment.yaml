@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-deployment
+  labels:
+    app: api
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - env: 
+        - name: name
+          value: "Abracadabara"
+        name: api
+        image: dockerenv:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 4444
+      restartPolicy: Always
