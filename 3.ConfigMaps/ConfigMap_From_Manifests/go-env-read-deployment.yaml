@@ -1,0 +1,29 @@
+# Not working. Unable to read from ConfigMap.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: go-deployment
+  labels:
+    app: api
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - name: go-env-read-container
+        image: dockerenv:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 4444
+        envFrom:
+        - configMapRef:
+            name: manifest-country
+        - configMapRef:
+            name: manifest-name
+      restartPolicy: Always
