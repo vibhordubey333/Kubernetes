@@ -80,6 +80,10 @@ The difference when using Kubernetes with Docker is that an automated system ask
 - To find IP of `headless service`. 
    - Enter into pod `kubectl exec -it pod_name -n namespace -- sh`
    - Fire `nslookup serviceName.namespace.svc.cluster.local` 
+- Accessing the pod with private IP using port forwarding.
+ Pods are allocated a private IP address by default and cannot be reached outside of the cluster. You can use the kubectl port-forward command to map a local    port to a port inside the pod like this:<br/>
+ `kubectl port-forward pod-name 8080:8080`
+ 
 </details>
 
  
