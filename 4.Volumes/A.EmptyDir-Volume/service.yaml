@@ -5,7 +5,7 @@ metadata:
 spec:
   selector: 
     app: story
-  type: LoadBalancer
+  type: LoadBalancer # If we don't specify this then service will be exposed internally not outside of the cluster.
   ports:
     - protocol: "TCP"
       port: 80

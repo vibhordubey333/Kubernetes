@@ -1,7 +1,6 @@
 ### Concepts Used: 
 1. Exposing deployent using `LoadBalancer` Service.
 2. Persisting data in emptyDir volumes.
-    - Good for single replica.
 ### To Run
 
 1. Build docker image `docker build -t kub-data-demo .`
