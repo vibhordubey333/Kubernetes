@@ -19,4 +19,4 @@ Environment variables can be saved in 3 manners.
 1. https://matthewpalmer.net/kubernetes-app-developer/articles/configmap-example-yaml.html
 2. https://cloud.google.com/kubernetes-engine/docs/concepts/configmap#:~:text=ConfigMaps%20bind%20non%2Dsensitive%20configuration,helps%20keep%20your%20workloads%20portable.
 3. https://www.weave.works/blog/kubernetes-configmap
-4. https://www.bmc.com/blogs/kubernetes-configmap/
+4. https://www.bmc.com/blogs/kubernetes-configmap
