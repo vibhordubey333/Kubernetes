@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: story-deployment
+spec: 
+  replicas: 1
+  selector:
+    matchLabels:
+      app: story
+  template:
+    metadata:
+      labels:
+        app: story
+    spec:
+      #restartPolicy: Never # As our image doesn't exist on DockerHub so we've set it to Never
+      containers:
+        - name: story
+          image: kub-data-demo:latest
+          volumeMounts:
+            - mountPath: /app/story
+              name: story-volume
+      volumes:
+        - name: story-volume
+          hostPath:
+            path: /data
+            type: DirectoryOrCreate # If dir doesn't exists then it will create.
