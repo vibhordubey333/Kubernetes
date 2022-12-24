@@ -1,7 +1,9 @@
 ### Architecture
 
 1. Application Architecture
-![image](https://user-images.githubusercontent.com/22407855/209424911-16721900-5cad-482f-8006-4280febe5a5b.png)
+![image](https://user-images.githubusercontent.com/22407855/209440389-73e65dca-a9af-47c4-8d4b-35228b006e15.png)
+![image](https://user-images.githubusercontent.com/22407855/209440735-5c6ff6a7-f37d-4a66-8aba-1073f6670e25.png)
+
 
 ### Run
 
