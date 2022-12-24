@@ -14,4 +14,11 @@ spec:
     spec:
       containers:
         - name: users
-          image: kub-demo-users
+          image: vibhordubey333/kub-demo-users:latest
+          env:
+            - name: AUTH_ADDRESS # We're not exposing Auth service to the outside world.
+              value: "auth-service.default" # work is the namespace here we can mention our custome too.
+        #value: "10.96.24.172" # kubectl get svc auth-deployment IP address
+        # Way to define multiple containers in a pod.
+        # - name: auth  
+        #   image: vibhordubey333/kub-demo-auth:latest

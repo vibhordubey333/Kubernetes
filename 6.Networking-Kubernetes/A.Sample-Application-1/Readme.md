@@ -7,9 +7,12 @@
 
 1. To run `docker-compose up -d --build`
 2. To remove the containers `docker-compose down`
-3. To build users-api `docker build -t kub-demo-users .`
+3. To build users-api `docker build -t vibhordubey333/kub-demo-users .`
+4. To build auth-api `docker build -t vibhordubey333/kub-demo-auth .`
 4. Edit deployment file to fix `ErrImmagePull` -> `kubectl edit deployment users-deployment`
-
+5. Push docker images so our deployment file can use it:
+    - `docker push vibhordubey333/kub-demo-auth:latest`
+    - `docker push vibhordubey333/kub-demo-users:latest`
 ### APIs
 1. Auth token
 ```
