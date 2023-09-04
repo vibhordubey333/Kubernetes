@@ -16,7 +16,9 @@
 
 
 ### APIs
-
+0. Replace IP and Port.
+   - `minikube ip`
+   - `kubectl get svc`
 1. `curl -XGET http://localhost:31721/story`
 Output: {"story":""}
 
