@@ -96,6 +96,7 @@ minikube version
 minikube version: v1.27.1
 commit: fe869b5d4da11ba318eb84a3ac00f336411de7ba
 ```
+- Avoid using docker from snapd store. <br/>
 - Run `minikube --vm-driver=none start --kubernetes-version=v1.17.0`
 
 ```
