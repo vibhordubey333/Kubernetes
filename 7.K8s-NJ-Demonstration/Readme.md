@@ -29,8 +29,9 @@ mongodb-secret        Opaque                                2      8s
 3. `kubectl get cm`
 4. `kubectl apply -f mongo-express.yaml`
 5. `kubectl get svc`
-6. To launch mongo-express `minikube service mongo-express-service`.
-7. Say, after launch mongo-express we perform any action like creating a database. Then below will be the flow.<br/>
+6. `kubectl apply -f mongo.yaml -f mongo-express.yaml `
+7. To launch mongo-express `minikube service mongo-express-service`.
+8. Say, after launch mongo-express we perform any action like creating a database. Then below will be the flow.<br/>
    
    ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/c391c404-6dbb-449c-b52c-0df14823e4c5)
 
