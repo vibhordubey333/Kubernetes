@@ -7,7 +7,7 @@
 #### Secrets
 ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/fb23591a-ea0e-49bb-af68-e0d3ceb0cbc1)
 
-To generate password and username, which is value itself in below command.<br/>
+To generate password and username, which is value itself in below command. They are stored in base64 encoding.<br/>
 
 `echo -n 'username' | base64`<br/>
 `echo -n 'password' | base64`<br/>
