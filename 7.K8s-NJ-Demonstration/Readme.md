@@ -7,5 +7,22 @@
 #### Secrets
 ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/fb23591a-ea0e-49bb-af68-e0d3ceb0cbc1)
 
+To generate password and username, which is value itself in below command.<br/>
+
+`echo -n 'username' | base64`<br/>
+`echo -n 'password' | base64`<br/>
+
+**Create secret before deployment otherwise there will be error.**
+
+#### Run
+
+1. Create secret `kubectl apply -f mongodb-secret.yaml`<br/>
+secret/mongodb-secret created<br/>
+
+2. Get created secret.<br/>
+   `kubectl get secret`<br/>
+NAME                  TYPE                                  DATA   AGE
+default-token-ntphp   kubernetes.io/service-account-token   3      25h
+mongodb-secret        Opaque                                2      8s
 
 
