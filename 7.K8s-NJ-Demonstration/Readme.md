@@ -5,6 +5,7 @@
 ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/f5611e42-91ae-4a06-bf16-86f29a9ba2cd)
 
 #### Secrets
-![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/de506e75-0ab5-41d9-8a54-30f946fe174b)
+![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/fb23591a-ea0e-49bb-af68-e0d3ceb0cbc1)
+
 
 
