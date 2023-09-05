@@ -16,7 +16,7 @@ To generate password and username, which is value itself in below command. They 
 
 #### Run
 
-1. Create secret `kubectl apply -f mongodb-secret.yaml`<br/>
+1. Create secret `kubectl apply -f mongodb-secret.yaml `<br/>
 secret/mongodb-secret created<br/>
 
 2. Get created secret.<br/>
@@ -24,5 +24,11 @@ secret/mongodb-secret created<br/>
 NAME                  TYPE                                  DATA   AGE
 default-token-ntphp   kubernetes.io/service-account-token   3      25h
 mongodb-secret        Opaque                                2      8s
+
+2. `kubectl apply -f mongodb-configmap.yaml`
+3. `kubectl get cm`
+4. `kubectl apply -f mongo-express.yaml`
+5. `kubectl get svc`
+6. To launch mongo-express `minikube service mongo-express-service`.
 
 
