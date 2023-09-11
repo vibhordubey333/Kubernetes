@@ -128,6 +128,30 @@ Execute `kubectl get po -o wide`<br/>
 
 **_Details from above commands are same i.e Pod IP address is same. Hence it is referring correct pod._**
 
+## Ingress
+
+  - **Without Ingress**<br/>
+    We’ve to expose the application using which can be accessed using ip address and port no. <br/>
+		
+    **Usability**
+      - Good for testcases
+      - To tryout things.
+        <br/>
+        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/5a5f32b9-ea11-4499-a29d-53e444a55015)
+        <br/>
+	But production ready application should not accessed using ip address and port.<br/>
+ 
+ 	  ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/30eaa433-98df-4cc2-9070-8a9fa8d6d007)
+
+        YAML file example<br/>
+    
+    ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/37a5cc45-2d66-48dd-91c3-50ea1020eb4e)
+
+
+
+
+
+
 <br/>
 
 
