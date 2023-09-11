@@ -92,6 +92,8 @@ Execute `kubectl get po -o wide`<br/>
 	mongodb-deployment-77f7698445-xd49j   1/1     Running   0          79m   172.17.0.3   vibhor-virtualbox   <none>           <none>
 ```
 
+**_Details from above commands are same i.e Pod IP address is same. Hence it is referring correct pod._**
+
 <br/>
 
 
