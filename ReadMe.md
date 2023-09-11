@@ -147,6 +147,12 @@ Execute `kubectl get po -o wide`<br/>
     
     ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/37a5cc45-2d66-48dd-91c3-50ea1020eb4e)
 
+  - **With Ingress**
+     - Request coming from outside will land on Ingress and ingress will forward it to pod.<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/22953166-0464-43dd-8efb-dbbb7d110321)<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/f1312253-89a6-4579-88a9-c32ff3ebbfe6)<br/>
+     - YAML file example<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/c3bb0e96-b7c3-4980-b624-c4095c42c5b2)<br/>
 
 
 
