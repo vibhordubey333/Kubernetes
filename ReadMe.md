@@ -154,8 +154,13 @@ Execute `kubectl get po -o wide`<br/>
      - YAML file example<br/>
        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/c3bb0e96-b7c3-4980-b624-c4095c42c5b2)<br/>
      - Ingress configuration<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/1e0e98a8-7a41-4b0b-80b5-8782e2a8e568)<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/7e3230a3-2419-4834-a9a8-edaf1d6292c5)<br/>
        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/e04f3e17-0220-4457-a68d-dd11c846fb9d)<br/>
        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/00ad772b-0217-4a4c-b408-955d963263a8)<br/>
+     - For GCE/AWS we can use cloud load balancer. Which doesn't require much of a configuration.<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/963896c3-6c05-438f-9aec-9d8b6c9649ab)<br/>
+
 
 
 
