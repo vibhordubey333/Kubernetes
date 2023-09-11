@@ -49,6 +49,9 @@ Kubernetes supports about 20 different varieties of volumes, including emptyDir 
 #### **Namespaces**<br/>
 ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/1d3ce8b5-54f0-4d39-a59e-ca198973a6fd)
 
+![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/42099241-e2be-4784-b675-ea75209f7d60)
+
+
 	- **Use cases:**<br/>		
  		1. Resource grouped in a namespace. Like Monitoring,Database,Elasic Stack.<br/>
 		2. Conflicts: Many teams and same application. If two teams are using same cluster then it creates the issue as they both may overwrite the cluster.<br/>
