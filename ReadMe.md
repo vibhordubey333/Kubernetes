@@ -210,9 +210,11 @@ The difference when using Kubernetes with Docker is that an automated system ask
 
 - Admin Commands
    - `minikube ip`
+   -  Enable dashboard `minikube dashboard`
    - `kubectl get nodes`
    - `kubectl cluster-info`
    - `kubectl cluster-info dump`
+   
 - Secrets
    - `kubectl get secret`
    - `kubectl describe secret secret_name`
