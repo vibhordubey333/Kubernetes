@@ -64,6 +64,34 @@ kubectl get pod -o wide
 kubectl get pod -o wide your_pod_name
 ```
 
+#### Verify if service is mapped to a correct pod.
+Execute `kubectl get svc` then `kubectl describe svc pod_name`
+```
+Name:              mongodb-service
+	Namespace:         default
+	Labels:            <none>
+	Annotations:       <none>
+	Selector:          app=mongodb
+	Type:              ClusterIP
+	IP Families:       <none>
+	IP:                10.105.123.117
+	IPs:               10.105.123.117
+	Port:              <unset>  27017/TCP
+	TargetPort:        27017/TCP
+	Endpoints:         172.17.0.3:27017
+	Session Affinity:  None
+	Events:            <none>
+```
+
+**Emphasise on Endpoints field**
+
+Execute `kubectl get po -o wide`<br/>
+
+```
+	NAME                                  READY   STATUS    RESTARTS   AGE   IP           NODE                NOMINATED NODE   READINESS GATES
+	mongodb-deployment-77f7698445-xd49j   1/1     Running   0          79m   172.17.0.3   vibhor-virtualbox   <none>           <none>
+```
+
 <br/>
 
 
@@ -105,7 +133,18 @@ The difference when using Kubernetes with Docker is that an automated system ask
 - Accessing the pod with private IP using port forwarding.
  Pods are allocated a private IP address by default and cannot be reached outside of the cluster. You can use the kubectl port-forward command to map a local    port to a port inside the pod like this:<br/>
  `kubectl port-forward pod-name 8080:8080`
- 
+
+- Admin Commands
+   - `minikube ip`
+   - `kubectl get nodes`
+   - `kubectl cluster-info`
+   - `kubectl cluster-info dump`
+- Secrets
+   - `kubectl get secret`
+   - `kubectl describe secret secret_name`
+- Namespace
+   - kubectl create ns
+- 
 </details>
 
  
