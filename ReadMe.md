@@ -45,6 +45,15 @@ Kubernetes supports about 20 different varieties of volumes, including emptyDir 
 
 ## **2. Kubernetes Architecture ?**
 
+
+#### **Selectors**<br/>
+Selectors, on the other hand, are used to select a group of objects based on their labels. They are used in various Kubernetes objects like Services, ReplicaSets, and Deployments to specify the Pods they are associated with.<br>
+
+![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/dbf761c1-6ec9-496d-abd0-ef60aaf030da)
+
+<br/>
+
+
 ## 3. **What about Docker?** <br/>
 Docker can be used as a container runtime that Kubernetes orchestrates. When Kubernetes schedules a pod to a node, the kubelet on that node will instruct Docker to launch the specified containers.
 The kubelet then continuously collects the status of those containers from Docker and aggregates that information in the control plane. Docker pulls containers onto that node and starts and stops those containers.
