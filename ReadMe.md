@@ -263,7 +263,19 @@ You can view the list of minikube maintainers at: https://github.com/kubernetes/
 🔎  Verifying ingress addon...
 🌟  The 'ingress' addon is enabled
 ```
+
+- If everything is good. Then pods should be up in `ingress-nginx` namespace.
+  
 ```
+v@vibhor-:~ $ kubectl get ns
+NAME              STATUS   AGE
+default           Active   3m47s
+ingress-nginx     Active   2m12s
+kube-node-lease   Active   3m47s
+kube-public       Active   3m47s
+kube-system       Active   3m47s
+
+
 osboxes@osboxes:~$ kubectl get po -n ingress-nginx
 NAME                                        READY   STATUS      RESTARTS   AGE
 ingress-nginx-admission-create-cxh7x        0/1     Completed   0          3m42s
