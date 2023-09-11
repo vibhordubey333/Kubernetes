@@ -220,7 +220,9 @@ The difference when using Kubernetes with Docker is that an automated system ask
    - `kubectl describe secret secret_name`
 - Namespace
    - kubectl create ns
-- 
+- Pods
+   - To get pods/services/deployments in a namespace `kubectl get all -n namespace_name`
+   - To get pods `kubectl get po`
 </details>
 
  
