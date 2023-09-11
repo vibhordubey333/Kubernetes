@@ -47,6 +47,7 @@ Kubernetes supports about 20 different varieties of volumes, including emptyDir 
 
 
 #### **Namespaces**<br/>
+![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/1d3ce8b5-54f0-4d39-a59e-ca198973a6fd)
 
 	- **Use cases:**<br/>		
  		1. Resource grouped in a namespace. Like Monitoring,Database,Elasic Stack.<br/>
@@ -227,5 +228,6 @@ ingress-nginx-admission-create-cxh7x        0/1     Completed   0          3m42s
 ingress-nginx-admission-patch-6pb78         0/1     Completed   0          3m42s
 ingress-nginx-controller-67fd4fc6fd-hfbcj   1/1     Running     0          3m42s
 ```
+
 </details>
 
