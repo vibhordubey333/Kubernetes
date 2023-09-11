@@ -160,6 +160,20 @@ Execute `kubectl get po -o wide`<br/>
        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/00ad772b-0217-4a4c-b408-955d963263a8)<br/>
      - For GCE/AWS we can use cloud load balancer. Which doesn't require much of a configuration.<br/>
        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/963896c3-6c05-438f-9aec-9d8b6c9649ab)<br/>
+     -  **Multiple paths for same host**
+        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/bd34d3fd-70f9-4431-a9a8-88b8752068fe)<br/>
+     -  **Multiple sub-domains or domains**
+        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/c8275391-b6c0-4867-88cd-e19fae49a5a0)<br/>
+        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/96ed71db-2408-4fe6-bd55-bd7dcb195b4b)<br/>
+     -  **Configuring TLS Certificate**
+        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/be9e1a36-4d75-473a-bdaf-30f5c499cced)<br/>
+        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/43646f40-2760-4177-af31-32195ce994c6)<br/>
+        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/99c2f381-b292-4775-8c00-7ba37146f518)<br/>
+
+
+
+
+
 
 
 
