@@ -46,6 +46,36 @@ Kubernetes supports about 20 different varieties of volumes, including emptyDir 
 ## **2. Kubernetes Architecture ?**
 
 
+#### **Namespaces**<br/>
+
+	- **Use cases:**<br/>		
+ 		1. Resource grouped in a namespace. Like Monitoring,Database,Elasic Stack.<br/>
+		2. Conflicts: Many teams and same application. If two teams are using same cluster then it creates the issue as they both may overwrite the cluster.<br/>
+		3. Resource sharing. Staging and development. Say, we deployed monitoring tools in a different namespace then they can be shared by staging and development environment.<br/>
+		4. Blue/Green Deployment : Using different-different versions.<br/>
+		5. Access and resource limits on namespace. Gives team access to their own namespace. Limit their resources as well.<br/>
+	
+	- **Limitations:**
+		1. Say we've namespaces A1 and B1. And A1 has config map that references DB service now B1 service cannot use A1's config map it needs to create it's own. So, each NS must define there own ConfigMap. Same rule applies for Secrets as well.<br/>
+		2. Resources which are not bound to namespaces are: volume, node. 
+			- To view resources which are not bound to namespaces can be checked using:  `kubectl api-resources --namespaced=false`
+			- `kubectl api-resources --namespaced=true` [Which are bound to a namespace.]
+	
+	 - K8's has 4 default namespaces. 
+	```
+	NAME              STATUS   AGE
+	default           Active   146m -> If no namespace is defined then by default resources are created in this namespace.
+	kube-node-lease   Active   146m -> Recent addition, it checks for the heartbeat of node. Each node has associated lease object in namespace which determines the node availbility.
+	kube-public       Active   146m -> Contains publicly accessible data like config maps which contains cluster information. 
+	kube-system       Active   146m -> Avoid tinkering with it. Contains, system processes[Master and kubectl processes]
+	```
+	-> Various methods to create a new namespace
+		A. kubectl create ns your_namespace_name_here 
+		B. Or kubectl apply -f deployment-file-name --namespace=your_namespace_name
+		C. Best Practise. Define it in your deployment file. 
+
+
+
 #### **Selectors**<br/>
 Selectors, on the other hand, are used to select a group of objects based on their labels. They are used in various Kubernetes objects like Services, ReplicaSets, and Deployments to specify the Pods they are associated with.<br>
 
