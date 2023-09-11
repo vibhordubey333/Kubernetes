@@ -51,6 +51,19 @@ Selectors, on the other hand, are used to select a group of objects based on the
 
 ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/dbf761c1-6ec9-496d-abd0-ef60aaf030da)
 
+
+#### Exposing deployment port to service.
+Ports defined in deployment is connecting to container port and port defined in service file is connecting to deployment port.
+
+![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/38b4b060-8871-4d30-860b-947c151e0e66)
+
+To verify whether port information[above] is correct or not:
+
+```
+kubectl get pod -o wide
+kubectl get pod -o wide your_pod_name
+```
+
 <br/>
 
 
