@@ -153,6 +153,9 @@ Execute `kubectl get po -o wide`<br/>
        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/f1312253-89a6-4579-88a9-c32ff3ebbfe6)<br/>
      - YAML file example<br/>
        ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/c3bb0e96-b7c3-4980-b624-c4095c42c5b2)<br/>
+     - Ingress configuration<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/e04f3e17-0220-4457-a68d-dd11c846fb9d)<br/>
+       ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/00ad772b-0217-4a4c-b408-955d963263a8)<br/>
 
 
 
