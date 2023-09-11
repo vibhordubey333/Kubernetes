@@ -226,6 +226,7 @@ The difference when using Kubernetes with Docker is that an automated system ask
 <summary>Minikube Installation</summary>
 
 - Install Minikube.
+- Then start `minikube start driver=docker` [Docker should be installed. Install from APT instead of snapd] 
 ```
 minikube version
 minikube version: v1.27.1
