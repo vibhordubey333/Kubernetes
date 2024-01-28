@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: index-web-container01
-        image: vibhordubey/html-webapp:latest
+        image: vibhordubey333/html-webapp:latest
         imagePullPolicy: IfNotPresent
         resources:
           requests:
