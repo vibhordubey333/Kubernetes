@@ -13,6 +13,8 @@ Traditionally on Unix-based systems, CronJobs work as follows:
    ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/11973a1b-dbdc-4e89-bc43-bb10e34b5ccc)
    ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/481053f5-820c-467e-8a72-c3f0e27d0c1b)
 
+**TODO**
+
 **3. Kubernetes CronJobs Monitoring and Considerations**
 One CronJob can serve as the model for various jobs, but you may need to adjust it. Here are some considerations when defining a CronJob.
 
