@@ -9,3 +9,4 @@ https://github.com/stern/stern
 -  tar -C /usr/local /usr/bin/ -xzf tar_ball_name
 -  https://github.com/stern/stern/releases/download/v1.28.0/stern_1.28.0_linux_amd64.tar.gz
 -  More flags: `stern demo-web-page-7d44d8fd-jztqq -n work --tail 1 --timestamps`
+-  TODO: Explore, selectors/labels
