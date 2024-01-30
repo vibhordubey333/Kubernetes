@@ -11,7 +11,19 @@ Traditionally on Unix-based systems, CronJobs work as follows:
    In Kubernetes, CronJobs are automatically managed by the cluster control plane. The cluster creates regular jobs with the pod spec from your CronJob object. CronJobs are a higher-level abstraction than standard K8S jobs that repeat the cycle periodically.
 
    ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/11973a1b-dbdc-4e89-bc43-bb10e34b5ccc)
+   ![image](https://github.com/vibhordubey333/Kubernetes/assets/22407855/481053f5-820c-467e-8a72-c3f0e27d0c1b)
 
+**3. Kubernetes CronJobs Monitoring and Considerations**
+One CronJob can serve as the model for various jobs, but you may need to adjust it. Here are some considerations when defining a CronJob.
+
+CronJob Concurrency Policy
+CronJobs have embedded concurrency controls (a major difference from Unix cron) that let you disable concurrent execution, although Kubernetes enables concurrency by default. With concurrency enabled, a scheduled CronJob run will start even if the last run is incomplete. Concurrency is not desirable for jobs that require sequential execution.
+
+You can control concurrency by configuring the concurrency policy on CronJob objects. You can set one of three values: <br/>
+
+Allow – this is the default setting. <br/>
+Forbid – prevents concurrent runs. Kubernetes skips scheduled starts if the last run hasn’t finished. <br/>
+Replace – terminates incomplete runs when the next job is scheduled, allowing the new run to proceed. <br/>
 
 3. When should you use Kubernetes CronJobs? (Benefits, Advantages)
 The main advantage and benefit of using a CronJob in Kubernetes is that it allows you to automate recurring tasks, such as backups, data synchronization, batch processing, and maintenance jobs. You should use them anywhere applicable where they are the most appropriate option to save manual effort.
@@ -115,6 +127,8 @@ Hello from the Kubernetes cluster
    
 ### References:
   -  https://medium.com/@pranay.shah/how-to-get-logs-from-cron-job-in-kubernetes-last-completed-job-7957327c7e76
+  -  https://spacelift.io/blog/kubernetes-cronjob
+  -  https://komodor.com/learn/kubernetes-cronjobs/
 
 ### Cron Issues
   -  https://stackoverflow.com/questions/75974501/kubernetes-finding-logs-of-a-failed-cronjob
