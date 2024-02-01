@@ -38,3 +38,9 @@ kubectl logs hello-world-job-r57d2
 hello world
 
 ```
+
+### Theory of Jobs
+kubernetes job object basically deploys a pod but it runs for completion as opposed to objects like deployment, replicasets, replication controllers, and DaemonSets, which runs continuously.
+
+For example, if you pass 100 as an argument, the shell script will echo the message 100 times and the container will exit.
+
