@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    test: liveness
+  name: liveness-exec-failure
+spec:
+  containers:
+  - name: liveness-exec-failure
+    image: k8s.gcr.io/busybox
+    args:
+    - /bin/sh
+    - -c
+    - touch /tmp/healthy-tmp; sleep 25; rm -rf /tmp/healthy; sleep 500 #creating a wrong file instead of /tmp/healthy
+    startupProbe:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+      initialDelaySeconds: 6 
+
+# Events:
+#   Type    Reason     Age   From               Message
+#   ----    ------     ----  ----               -------
+#   Normal  Scheduled  37s   default-scheduler  Successfully assigned default/liveness-exec-successful to minikube
+#   Normal  Pulling    36s   kubelet            Pulling image "k8s.gcr.io/busybox"
+#   Normal  Pulled     34s   kubelet            Successfully pulled image "k8s.gcr.io/busybox" in 1.738s (1.738s including waiting)
+#   Normal  Created    34s   kubelet            Created container liveness-exec-successful
+#   Normal  Started    34s   kubelet            Started container liveness-exec-successful
+

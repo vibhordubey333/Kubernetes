@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: http-get-pod-failure
+spec:
+  containers:
+  - name: http-get-failure-container
+    image: nginx
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 90 # Correct port is 80. To demonstrate failure side mentioned wrong port.
+      initialDelaySeconds: 15
+      periodSeconds: 20
+
+# Events:
+#   Type     Reason     Age   From               Message
+#   ----     ------     ----  ----               -------
+#   Normal   Scheduled  38s   default-scheduler  Successfully assigned default/http-get-pod-failure to minikube
+#   Normal   Pulling    35s   kubelet            Pulling image "nginx"
+#   Normal   Pulled     33s   kubelet            Successfully pulled image "nginx" in 2.616s (2.616s including waiting)
+#   Normal   Created    32s   kubelet            Created container http-get-failure-container
+#   Normal   Started    32s   kubelet            Started container http-get-failure-container
+#   Warning  Unhealthy  17s   kubelet            Liveness probe failed: Get "http://10.244.0.12:90/": dial tcp 10.244.0.12:90: connect: connection refused

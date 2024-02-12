@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcpsocketprobesuccess
+spec:
+  selector:
+      matchLabels:
+        app: tcpsocketprobesuccess
+  template:
+    metadata:
+      labels:
+        app: tcpsocketprobesuccess
+    spec:
+      containers:
+      - name: my-tcpsocketprobesuccess
+        image: nginx:1.14.2
+        startupProbe:
+          tcpSocket:
+            port: 80
+          failureThreshold: 30
+          periodSeconds: 10 
+
+# Events:
+#   Type    Reason     Age    From               Message
+#   ----    ------     ----   ----               -------
+#   Normal  Scheduled  3m45s  default-scheduler  Successfully assigned default/tcpsocketprobesuccess-c4c8d9f5b-gwprd to minikube
+#   Normal  Pulled     3m45s  kubelet            Container image "nginx:1.14.2" already present on machine
+#   Normal  Created    3m44s  kubelet            Created container my-tcpsocketprobesuccess
+#   Normal  Started    3m44s  kubelet            Started container my-tcpsocketprobesuccess
