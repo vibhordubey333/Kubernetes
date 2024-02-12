@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcpsocketprobefailure
+spec:
+  selector:
+      matchLabels:
+        app: tcpsocketprobefailure
+  template:
+    metadata:
+      labels:
+        app: tcpsocketprobefailure
+    spec:
+      containers:
+      - name: my-tcpsocketprobefailure
+        image: nginx:1.14.2
+        startupProbe:
+          tcpSocket:
+            port: 90 # Correct port is 80
+          failureThreshold: 30
+          periodSeconds: 10

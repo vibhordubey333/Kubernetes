@@ -1,6 +1,7 @@
 
 0. Startup probes
 
+A startup probe is used to determine whether a container is ready to accept traffic. It differs from liveness and readiness probes in that it runs only when a container first starts, and it's disabled after the first successful check. This is useful for applications that take some time to initialize before they are ready to serve traffic.
 Startup probes are used to determine when a container application has been initialized successfully. If a startup probe fails, the pod is restarted. When pod containers take too long to become ready, readiness probes may fail repeatedly. In this case, containers risk being terminated by kubelet before they are up and running. This is where the startup probe comes to the rescue.
 
 The startup probe forces liveness and readiness checks to wait until it succeeds so that the application startup is not compromised. That is especially beneficial for slow-starting legacy applications.
@@ -29,3 +30,4 @@ The startup probe forces liveness and readiness checks to wait until it succeeds
 -	References
 	-	https://kubebyexample.com/concept/health-checks
 	-	https://www.linkedin.com/pulse/understanding-kubernetes-startup-probes-examples-use-cases-feyz-sari-bc2de/
+	-	https://newrelic.com/blog/how-to-relic/kubernetes-health-checks
