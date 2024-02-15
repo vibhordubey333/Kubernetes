@@ -16,6 +16,9 @@ The startup probe forces liveness and readiness checks to wait until it succeeds
 	-	TCP Socket Startup Probe
 		The startup probe checks if the TCP port 3000 is open. If the port is open, the container is considered alive.
 
+	-	gRPC Probe
+		Check Liveness-Probe directory.
+
 2. To apply yaml file `kubectl apply -f yaml_file_name`
 
 3. To check status 
