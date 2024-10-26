@@ -1,0 +1,8 @@
+apiVersion: vibhordubey333.com/v1
+kind: GoApp
+metadata:
+  name: goapp-instance
+spec:
+  spec:
+    replicas: 3
+    image: nginx
