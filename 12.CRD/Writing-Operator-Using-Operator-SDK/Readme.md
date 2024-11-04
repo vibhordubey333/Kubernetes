@@ -1,4 +1,15 @@
-1. Windows installation
+Using Operator SDK
+
+1. Installation
+   https://sdk.operatorframework.io/docs/installation/
+2. `operator-sdk init --domain example.com --repo github.com/example/my-operator`
+3. `operator-sdk create api --group apps --version v1alpha1 --kind MyApp --resource --controller`
+Reference:
+https://www.faizanbashir.me/guide-to-create-kubernetes-operator-with-golang
+
+---
+
+6. Windows installation
    go install sigs.k8s.io/controller-tools/cmd/controller-gen@latest
 2. Linux Installation
    To be updated
