@@ -125,3 +125,6 @@ limitations under the License.
 9. make bundle bundle-build bundle-push
 10. https://github.com/operator-framework/operator-sdk/blob/latest/testdata/go/v4/memcached-operator/internal/controller/memcached_controller.go
 11. kubectl apply -f config/samples/cache_v1alpha1_memcached.yaml
+12. `kubectl get memcached`
+13. `kubectl get memcached.cache.example.com`
+14. 
