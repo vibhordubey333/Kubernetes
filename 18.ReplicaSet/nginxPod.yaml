@@ -4,7 +4,7 @@ metadata:
   name: nginx-pod
   labels:
     env: production
-  spec:
+spec:
   containers:
-    - name: nginx-container
-      image: nginx:latest
+  - name: nginx-container
+    image: nginx:latest
