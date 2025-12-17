@@ -1,17 +1,34 @@
 ### Steps To Run
 0. Refer Makefile to deploy.
 1. Using NodePort service
-    `minikube ip` then curl -v http://minikubeip:port pick port from `kubectl get svc -n work`
 
-   -    Command:
+   **On macOS (recommended method):**
+   - Use `make accessNodePort` or `make getServiceURL` to get the accessible URL
+   - Or use: `minikube service html-webapp -n work --url`
+   - Then curl the returned URL: `curl http://<returned-url>`
+   
+   **Alternative on macOS:**
+   - Use `make portForward` to set up port-forwarding
+   - Then access via: `curl http://localhost:8080`
+
+   **On Linux (direct access):**
+   - Get minikube IP: `minikube ip`
+   - Get NodePort: `kubectl get svc -n work` (look for the port after the colon, e.g., 80:32765/TCP means NodePort is 32765)
+   - Access via: `curl http://<minikube-ip>:<nodeport>`
+   
+   -    Example:
          ```
-            vibhor@vibhor-virtualbox:~/code-repositories/Kubernetes/1.Deploying_Static_WebSite (master)$ kubectl get svc -n work
+            $ kubectl get svc -n work
             NAME          TYPE       CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
             html-webapp   NodePort   10.107.183.127   <none>        80:32765/TCP   101m
 
+            $ minikube ip
+            192.168.49.2
+            
+            $ curl http://192.168.49.2:32765
          ```
-    -    Curl requests:
-          `curl http://192.168.58.2:32765`
+   
+   **Note:** On macOS, direct access to minikube IP may not work due to networking limitations. Use `minikube service` command instead.
          
    3. Using ClusterIP service.
        ClusterIP service is not exposed outside the cluster. In order to access. <br/>
