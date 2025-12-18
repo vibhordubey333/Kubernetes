@@ -2,12 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: dashboard-ingress
-  namespace: kubernetes-dashboard
+  namespace: kubernetes-dashboard  # Must match the namespace where kubernetes-dashboard service is deployed
 spec:
-    rules:
-      - host: dashboard.com
-        http:
-          paths:
-            - backend:
-                serviceName: kubernetes-dashboard
-                servicePort: 80
+  rules:
+    - host: dashboard.com  # The hostname to access the dashboard (add to /etc/hosts)
+      http:
+        paths:
+          - path: /  # Route all requests under / to the backend
+            pathType: Prefix  # Required in Ingress v1 (Prefix, Exact, or ImplementationSpecific)
+            backend:
+              service:
+                name: kubernetes-dashboard  # Name of the backend service
+                port:
+                  number: 80  # Service port (not the container port 9090)
