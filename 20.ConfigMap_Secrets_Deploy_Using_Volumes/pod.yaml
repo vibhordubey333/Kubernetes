@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hvac-worker
+spec:
+  containers:
+  - name: worker
+    image: alpine
+    command: [ "sleep", "3600" ]
+    volumeMounts:
+    # Where the 'drawer' appears inside the container
+    - name: cfg-vol
+      mountPath: "/etc/config"
+      readOnly: true
+    - name: sec-vol
+      mountPath: "/etc/keys"
+      readOnly: true
+  volumes:
+  # Defining the 'drawer' and what goes in it
+  - name: cfg-vol
+    configMap:
+      name: hvac-cfg
+  - name: sec-vol
+    secret:
+      secretName: hvac-key

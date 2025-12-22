@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hvac-cfg
+data:
+  # This becomes a filename inside the pod
+  settings.conf: |
+    mode=eco
+    target_temp=72
+    fan_speed=low
