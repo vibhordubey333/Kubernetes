@@ -12,3 +12,6 @@ kubectl exec hvac-worker -- cat /etc/config/settings.conf
 
 # Read the secret key
 kubectl exec hvac-worker -- cat /etc/keys/api-key
+
+# To decode the encrypted secret
+echo your_encrypted_secret_output | base64 --decode
